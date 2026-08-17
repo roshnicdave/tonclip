@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tonclip"
+version = "0.1.0"
+description = "An encrypted, temporary clipboard over the public TON DHT"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Digital Resistance" }]
+dependencies = [
+  "cryptography>=42",
+  "pytoniq==0.1.43",
+  "pytoniq-core==0.1.46",
+]
+
+[project.scripts]
+tonclip = "tonclip.cli:main"
+
+[project.urls]
+Repository = "https://github.com/roshnicdave/tonclip"
+
+[tool.setuptools.package-data]
+tonclip = ["global.config.json"]
